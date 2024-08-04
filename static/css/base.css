@@ -1,0 +1,18 @@
+html {
+  font-family: sans-serif;
+}
+
+body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  margin: 0 auto;
+}
+
+article {
+  max-width: 720px;
+  line-height: 1.3;
+}

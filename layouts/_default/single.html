@@ -1,13 +1,13 @@
 {{define "main"}}
 
 <!--Title-->
-<h2>{{.Title}}</h2>
+<h1>{{.Title}}</h1>
 
 <!--Date-->
-{{.Date.Format "2006-01-02"}}
+{{.Date.Format "Jan 2, 2006"}}
 
 <!--TOC-->
-{{.TableOfContents}}
+<!-- {{.TableOfContents}} TODO: add back after finding a suitable place -->
 
 <!--Content-->
 {{.Content}}
@@ -19,9 +19,10 @@
 	{{end}}
 </ul>
 
-<!--Prev/Next-->
+<!--Prev/Next
 {{with .PrevInSection}}Prev <a href="{{.RelPermalink}}">{{.Title}}</a>{{end}}
 {{with .NextInSection}}Next <a href="{{.RelPermalink}}">{{.Title}}</a>{{end}}
+-->
 
 <!--Related-->
 {{$related := .Site.RegularPages.Related . | first 5}}

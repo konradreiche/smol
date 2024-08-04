@@ -1,12 +1,12 @@
-description = "Fully functional basic Hugo theme with no css, no javascript."
+description = "A Hugo theme for the smol web"
 features    = []
-homepage    = "https://sk1.jsiu.dev/"
+homepage    = "https://github.com/konradreiche/smol"
 license     = "MIT"
-licenselink = "https://github.com/J-Siu/hugo-theme-sk1/blob/master/LICENSE"
+licenselink = "https://github.com/konradreiche/smol/blob/main/LICENSE"
 min_version = "0.65.0"
-name        = "SK1"
+name        = "smol"
 tags        = ["blog", "clean", "minimal", "personal", "simple"]
 
 [author]
-homepage = "https://johnsiu.com/"
-name     = "John Siu"
+homepage = "https://konradreiche.com/"
+name     = "Konrad Reiche"
