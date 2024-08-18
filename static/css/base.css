@@ -9,11 +9,29 @@ body {
 }
 
 header {
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   a {
     text-decoration: none;
     color: black;
   }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  display: flex;
+
+  a {
+    margin-right: 16px;
+  }
+
+  a:nth-child(1) {
+    margin-right: auto;
+  }
+}
+
+.home {
+  font-weight: bold;
 }
 
 article {
@@ -30,6 +48,7 @@ blockquote {
 .highlight {
   border: 1px solid #000;
   padding-left: 10px;
+  overflow: auto;
 }
 
 ul.index {

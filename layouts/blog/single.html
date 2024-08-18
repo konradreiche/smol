@@ -3,6 +3,12 @@
 <!--Title-->
 <h1>{{.Title}}</h1>
 
+<!--Date-->
+<time>{{.Date.Format "Jan 2, 2006"}}</time>
+
+<!--TOC-->
+<!-- {{.TableOfContents}} TODO: add back after finding a suitable place -->
+
 <!--Content-->
 {{.Content}}
 

@@ -7,7 +7,7 @@
     {{- partial "header.html" . -}}
   </header>
   <main>
-    <article id="content">
+    <article id="{{ lower .Title }}">
       {{- block "main" . }}{{- end }}
     </article>
   </main>
