@@ -1,0 +1,13 @@
+{{define "main"}}
+
+<!--list-->
+<ul class="index">
+  {{ with .Resources.ByType "image" }}
+    {{ range . }}
+      {{ $image := .Fit "720x720" }}
+      <img src="{{ $image.RelPermalink }}" alt="{{ $.Description }}">
+    {{ end }}
+  {{ end }}
+</ul>
+
+{{end}}

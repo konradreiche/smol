@@ -1,0 +1,19 @@
+{{define "main"}}
+
+<!--$paginator-->
+{{$p := .Pages}}
+{{$paginator := .Paginate $p}}
+
+<!--list-->
+<ul class="index">
+	{{range $paginator.Pages}}
+	<li>
+    <a href="{{.RelPermalink}}">{{.Title}}</a>
+  </li>
+	{{end}}
+</ul>
+
+<!--pagination-->
+{{template "_internal/pagination.html" .}}
+
+{{end}}

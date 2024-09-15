@@ -1,7 +1,9 @@
 {{range where .Site.Pages "Type" "!=" "blog" }}
-{{if .IsHome}}
-  <a class="home" href="{{ .Permalink | relLangURL}}">{{.Title}}</a>
-{{else}}
-  <a href="{{ .Permalink | relLangURL}}">{{.Title}}</a>
+  {{ if eq (.Path | strings.Count "/") 1 }}
+    {{ if .IsHome }}
+      <a class="home" href="{{ .Site.Home.Permalink | relLangURL}}">{{ .Title }}</a>
+    {{ else }}
+      <a href="{{ .Permalink | relLangURL}}">{{ .Title }}</a>
+    {{ end }}
+  {{ end }}
 {{end}}
-{{ end }}
