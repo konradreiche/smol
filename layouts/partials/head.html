@@ -3,8 +3,11 @@
 <meta name="description" content="{{ .Site.Params.description }}">
 <meta name="og:image" content="{{ .Site.Params.opengraph.image | relURL }}">
 <title>{{ .Site.Title }}</title>
-<link rel="stylesheet" href="/css/base.css">
+{{ with resources.GetMatch "css/base.css" | minify  }}
+<style>{{ .Content | safeCSS }}</style>
+{{ end }}
 {{ range .Site.Params.css -}}
-    <link rel="stylesheet" href="{{ . | relURL }}">
+<link rel="preload" href="{{ . | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ . | relURL }}"></noscript>
 {{- end }}
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ "blog/index.xml" | absURL }}">
