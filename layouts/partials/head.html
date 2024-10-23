@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{ .Site.Params.description }}">
 <meta name="author" content="{{ .Site.Params.author }}">
-<meta name="og:image" content="{{ .Site.Params.opengraph.image | absURL }}">
+<meta name="image" property="og:image" content="{{ .Site.Params.opengraph.image | absURL }}">
 <title>{{ .Site.Title }}</title>
 {{ with resources.GetMatch "css/base.css" | minify  }}
 <style>{{ .Content | safeCSS }}</style>
