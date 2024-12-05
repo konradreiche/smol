@@ -2,14 +2,19 @@
 
 <!--$paginator-->
 {{$p := .Pages}}
+{{ $currentDepth := strings.Count "/" .Permalink }}
 {{$paginator := .Paginate $p}}
 
 <!--list-->
-<ul class="index">
+<ul class="index photos">
 	{{range $paginator.Pages}}
-	<li>
-    <a href="{{.RelPermalink}}">{{.Title}}</a>
-  </li>
+    {{ $pageDepth := strings.Count "/" .Permalink }}
+    {{ if eq $pageDepth (add $currentDepth 1) }}
+      <li>
+        <div>{{.Date.Format "January 2006"}}</div>
+        <a href="{{.RelPermalink}}">{{.Title}}</a>
+      </li>
+  {{ end }}
 	{{end}}
 </ul>
 

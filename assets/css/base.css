@@ -62,4 +62,16 @@ ul.index {
   li {
     margin-bottom: 12px;
   }
+
+  &.photos li {
+    margin-bottom: 24px;
+  }
+}
+
+.photo-single h1 {
+  font-size: inherit;
+}
+
+.camera-info {
+  font-size: 0.75em;
 }

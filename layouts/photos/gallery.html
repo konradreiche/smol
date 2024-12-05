@@ -1,0 +1,38 @@
+{{define "main"}}
+
+<!--list-->
+<ul class="index gallery">
+  {{ range .Pages }}
+    {{ $page := . }}
+    {{ with .Resources.ByType "image" }}
+      {{ range . }}
+        {{ $image := . }}
+        {{ if gt .Width .Height }}
+          {{ $image := .Fit "720x720" }}
+        {{ else }}
+          {{ $image := .Resize "720x720" }}
+        {{ end }}
+        <li>
+          <a href="{{ $page.Permalink }}">
+            <img src="{{ $image.RelPermalink }}" alt="{{ $.Description }}">
+          </a>
+        </li>
+      {{ end }}
+    {{ end }}
+  {{ end }} 
+  {{ with .Resources.ByType "image" }}
+    {{ range . }}
+      {{ $image := . }}
+      {{ if gt .Width .Height }}
+        {{ $image := .Fit "720x720" }}
+      {{ else }}
+        {{ $image := .Resize "720x720" }}
+      {{ end }}
+      <li>
+        <img src="{{ $image.Permalink }}" alt="{{ $.Description }}">
+      </li>
+    {{ end }}
+  {{ end }}
+</ul>
+
+{{end}}

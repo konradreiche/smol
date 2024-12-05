@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="photo-single">
+  {{ with .Resources.ByType "image" }}
+    {{ range . }}
+      {{ $image := .  }}
+      <img src="{{ .RelPermalink }}" alt="{{ $.Description }}">
+    {{ end }}
+  {{ end }}
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Params.description }}</p>
+  <hr>
+  <p class="camera-info">Camera – {{ .Params.camera }}</p>
+</div>
+{{ end }}
