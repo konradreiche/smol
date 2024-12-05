@@ -8,9 +8,9 @@
       {{ range . }}
         {{ $image := . }}
         {{ if gt .Width .Height }}
-          {{ $image := .Fit "720x720" }}
+          {{ $image = .Fit "720x720 q100" }}
         {{ else }}
-          {{ $image := .Resize "720x720" }}
+          {{ $image = .Resize "720x720 q100" }}
         {{ end }}
         <li>
           <a href="{{ $page.Permalink }}">
@@ -24,9 +24,9 @@
     {{ range . }}
       {{ $image := . }}
       {{ if gt .Width .Height }}
-        {{ $image := .Fit "720x720" }}
+        {{ $image := .Fit "720x720 q100" }}
       {{ else }}
-        {{ $image := .Resize "720x720" }}
+        {{ $image := .Resize "720x720 q100" }}
       {{ end }}
       <li>
         <img src="{{ $image.Permalink }}" alt="{{ $.Description }}">

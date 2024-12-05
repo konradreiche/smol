@@ -3,7 +3,12 @@
   {{ with .Resources.ByType "image" }}
     {{ range . }}
       {{ $image := .  }}
-      <img src="{{ .RelPermalink }}" alt="{{ $.Description }}">
+      {{ if gt .Width .Height }}
+        {{ $image = .Fit "720x720 q100" }}
+      {{ else }}
+        {{ $image = .Resize "720x720 q100" }}
+      {{ end }}
+      <img src="{{ $image.RelPermalink }}" alt="{{ $.Description }}">
     {{ end }}
   {{ end }}
   <h1>{{ .Title }}</h1>
