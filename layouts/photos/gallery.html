@@ -24,12 +24,12 @@
     {{ range . }}
       {{ $image := . }}
       {{ if gt .Width .Height }}
-        {{ $image := .Fit "720x720 q100" }}
+        {{ $image = .Fit "720x720 q100" }}
       {{ else }}
-        {{ $image := .Resize "720x720 q100" }}
+        {{ $image = .Resize "720x720 q100" }}
       {{ end }}
       <li>
-        <img src="{{ $image.Permalink }}" alt="{{ $.Description }}">
+        <img src="{{ $image.RelPermalink }}" alt="{{ $.Description }}">
       </li>
     {{ end }}
   {{ end }}
