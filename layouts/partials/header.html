@@ -1,4 +1,4 @@
-{{range where .Site.Pages "Type" "!=" "blog" }}
+{{range sort (where .Site.Pages "Type" "!=" "blog") "Weight" }}
   {{ if eq (.Path | strings.Count "/") 1 }}
     {{ if .IsHome }}
       <a class="home" href="{{ .Site.Home.Permalink | relLangURL}}">{{ .Title }}</a>
