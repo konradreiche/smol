@@ -49,6 +49,10 @@ img {
   width: 100%;
 }
 
+ol li {
+  margin-bottom: 8px;
+}
+
 .highlight {
   border: 1px solid #000;
   padding-left: 10px;
