@@ -6,12 +6,7 @@
     {{ $page := . }}
     {{ with .Resources.ByType "image" }}
       {{ range . }}
-        {{ $image := . }}
-        {{ if gt .Width .Height }}
-          {{ $image = .Fit "720x720 q100" }}
-        {{ else }}
-          {{ $image = .Resize "720x720 q100" }}
-        {{ end }}
+        {{ $image := .Fit "720x720 q100" }}
         <li>
           <a href="{{ $page.Permalink }}">
             <img src="{{ $image.RelPermalink }}" alt="{{ $.Description }}">
@@ -22,12 +17,7 @@
   {{ end }} 
   {{ with .Resources.ByType "image" }}
     {{ range . }}
-      {{ $image := . }}
-      {{ if gt .Width .Height }}
-        {{ $image = .Fit "720x720 q100" }}
-      {{ else }}
-        {{ $image = .Resize "720x720 q100" }}
-      {{ end }}
+      {{ $image := .Fit "720x720 q100" }}
       <li>
         <img src="{{ $image.RelPermalink }}" alt="{{ $.Description }}">
       </li>
