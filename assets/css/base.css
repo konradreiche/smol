@@ -49,6 +49,23 @@ ol li {
   margin-bottom: 8px;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+}
+
+th, td {
+  padding: 6px 13px;
+  border: 1px solid #000;
+  text-align: left;
+  width: 50%
+}
+
+th {
+  font-weight: bold;
+}
+
 .camera-info {
   font-size: 0.75em;
 }
