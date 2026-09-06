@@ -1,3 +1,7 @@
+:root {
+  color-scheme: light dark;
+}
+
 html {
   font-family: sans-serif;
 }
@@ -11,7 +15,7 @@ header {
   margin: 0 auto 2rem auto;
   a {
     text-decoration: none;
-    color: black;
+    color: inherit;
   }
 
   a:hover {
@@ -57,7 +61,7 @@ table {
 
 th, td {
   padding: 6px 13px;
-  border: 1px solid #000;
+  border: 1px solid light-dark(#000, #666);
   text-align: left;
   width: 50%
 }
@@ -75,7 +79,7 @@ th {
 }
 
 .highlight {
-  border: 1px solid #000;
+  border: 1px solid currentColor;
   padding-left: 10px;
   overflow: auto;
 }
@@ -103,7 +107,7 @@ ul.index {
 }
 
 :not(pre) > code {
-  background-color: #f3f3f3;
-  color: #000;
+  background-color: light-dark(#f3f3f3, #222);
+  color: inherit;
   padding: 0.1em 0.3em;
 }

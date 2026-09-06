@@ -13,4 +13,8 @@
 <link rel="preload" href="{{ . | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ . | relURL }}"></noscript>
 {{- end }}
+{{ range .Site.Params.cssMedia -}}
+<link rel="preload" href="{{ .file | relURL }}" as="style" media="{{ .media }}" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ .file | relURL }}" media="{{ .media }}"></noscript>
+{{- end }}
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ "blog/index.xml" | absURL }}">
